@@ -10,12 +10,13 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), "dist"),
     filename: "bundle.min.js",
+    clean: true,
   },
   devtool: false,
-  performance: {
-    maxEntrypointSize: 2500000,
-    maxAssetSize: 1200000,
-  },
+  // performance: {
+  //   maxEntrypointSize: 2500000,
+  //   maxAssetSize: 1200000,
+  // },
   module: {
     rules: [
       {

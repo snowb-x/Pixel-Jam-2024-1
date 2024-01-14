@@ -6,6 +6,11 @@ const webpack = require("webpack");
 module.exports = {
   mode: "development",
   devtool: "eval-source-map",
+  output: {
+    path: path.resolve(process.cwd(), "dist"),
+    filename: "bundle.min.js",
+    clean: true,
+  },
   module: {
     rules: [
       {
