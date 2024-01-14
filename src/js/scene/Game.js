@@ -18,6 +18,8 @@ export default class Game extends Phaser.Scene {
   /** @type {Phaser.Physics.Arcade.Sprite} */
   player;
 
+  playerSpeedBoost = 0;
+
   cursors;
 
   constructor() {
@@ -26,7 +28,7 @@ export default class Game extends Phaser.Scene {
 
   init() {
     this.score = 0;
-    this.foodDropSpeed = 100;
+    this.foodDropSpeed = 50;
   }
   preload() {
     //load path from root
@@ -117,11 +119,11 @@ export default class Game extends Phaser.Scene {
   update(t, dt) {
     const foodSp = this.foodDropSpeed;
     if (this.cursors.left.isDown) {
-      this.player.setVelocityX(-160);
+      this.player.setVelocityX(-160 - this.playerSpeedBoost);
 
       this.player.anims.play("left", true);
     } else if (this.cursors.right.isDown) {
-      this.player.setVelocityX(160);
+      this.player.setVelocityX(160 + this.playerSpeedBoost);
 
       this.player.anims.play("right", true);
     } else {
@@ -148,10 +150,28 @@ export default class Game extends Phaser.Scene {
     //  Add and update the score
     this.score += 10;
     this.foodCollectedText.setText("Score: " + this.score);
+
+    //points level handler
+
+    // if points go higher speed goes faster
+
+    if (this.score % 100 == 0) {
+      this.setFoodDropSpeed(this.foodDropSpeed + 10);
+    }
+
+    //if player score over anamount add speed boost
+
+    if (this.score % 50 == 0) {
+      this.setPlayerSpeedBoost(this.playerSpeedBoost + 10);
+    }
   }
 
   setFoodDropSpeed(newSpeed) {
     this.foodDropSpeed = newSpeed;
+  }
+
+  setPlayerSpeedBoost(newBoost) {
+    this.playerSpeedBoost = newBoost;
   }
 
   addNewWave() {
