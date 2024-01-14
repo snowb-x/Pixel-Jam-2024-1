@@ -1,12 +1,13 @@
 import Phaser from "phaser";
 import Game from "./js/scene/Game.js";
+import GameMenu from "./js/scene/GameMenu.js";
 import DvdIdel from "./js/scene/DvdIdel.js";
 import "./style.css";
 const config = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
-  scene: [Game, DvdIdel],
+  scene: [GameMenu, Game, DvdIdel],
   physics: {
     default: "arcade",
     arcade: {
