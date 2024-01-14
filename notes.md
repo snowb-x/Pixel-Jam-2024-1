@@ -11,3 +11,7 @@
 
 - used pixel website to draw player
   https://www.pixilart.com/
+
+- music
+  https://pixabay.com/music/search/genre/video%20games/
+  https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack
