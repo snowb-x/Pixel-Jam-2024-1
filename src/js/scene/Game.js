@@ -281,6 +281,8 @@ export default class Game extends Phaser.Scene {
   /** @type {Phaser.Physics.Arcade.Group} */
   bomb;
 
+  BombRate;
+
   /** @type {Phaser.Physics.Arcade.Group} */
   boom;
 
@@ -313,6 +315,7 @@ export default class Game extends Phaser.Scene {
   init() {
     this.score = 0;
     this.bomb;
+    this.BombRate = 6;
     this.foodDropSpeed = 90;
     this.playerSpeedBoost = 0;
     this.totalFood = 10;
@@ -329,7 +332,7 @@ export default class Game extends Phaser.Scene {
   preload() {
     //load path from root
     this.load.image("sky", "assets/images/sky.png");
-    this.load.spritesheet("player", "assets/images/Player_spritesheet.png", {
+    this.load.spritesheet("player", "assets/images/player_spritesheet.png", {
       frameWidth: 100,
       frameHeight: 100,
     });
@@ -624,7 +627,7 @@ export default class Game extends Phaser.Scene {
     let randomPicker = 0;
 
     this.bomb.children.iterate((child) => {
-      randomPicker = Phaser.Math.Between(0, 3);
+      randomPicker = Phaser.Math.Between(0, this.BombRate);
       if (randomPicker == 0) {
         this.sampleFood.push(child);
       } else {
@@ -647,7 +650,7 @@ export default class Game extends Phaser.Scene {
     let randomPicker = 0;
 
     this.bomb.children.iterate((child) => {
-      randomPicker = Phaser.Math.Between(0, 3);
+      randomPicker = Phaser.Math.Between(0, this.BombRate);
       if (randomPicker == 0) {
         this.sampleFood.push(child);
       } else {
@@ -783,7 +786,7 @@ export default class Game extends Phaser.Scene {
     });
     let randomPicker = Phaser.Math.Between(2, 8);
     this.bomb.children.iterate((child) => {
-      randomPicker = Phaser.Math.Between(0, 2);
+      randomPicker = Phaser.Math.Between(0, this.BombRate);
       if (randomPicker == 0) {
         newFoods.push(child);
       } else {

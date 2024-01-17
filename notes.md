@@ -15,3 +15,7 @@
 - music
   https://pixabay.com/music/search/genre/video%20games/
   https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack
+
+- shader:
+  https://labs.phaser.io/view.html?src=src%5Cdisplay%5Cshaders%5Cshader%20test%202.js
+  https://labs.phaser.io/view.html?src=src%5Cdisplay%5Cshaders%5Cshader%20test%201.js
