@@ -9,6 +9,9 @@
 - Phaser examples
   https://labs.phaser.io/index.html?dir=&q=
 
+- phaser webpack template
+  https://github.com/phaserjs/template-webpack
+
 ## Credits
 
 - pictures:
@@ -30,3 +33,6 @@
 - shader:
   https://labs.phaser.io/view.html?src=src%5Cdisplay%5Cshaders%5Cshader%20test%202.js
   https://labs.phaser.io/view.html?src=src%5Cdisplay%5Cshaders%5Cshader%20test%201.js
+
+- phaser assets
+  https://github.com/phaserjs/examples/blob/master/public
