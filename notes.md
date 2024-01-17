@@ -1,3 +1,14 @@
+## Tutorials
+
+- setup NPM
+  https://www.youtube.com/watch?v=t1C39gwbw_s
+
+- Getting started
+  https://phaser.io/tutorials/getting-started-phaser3/index
+
+- Phaser examples
+  https://labs.phaser.io/index.html?dir=&q=
+
 ## Credits
 
 - pictures:
